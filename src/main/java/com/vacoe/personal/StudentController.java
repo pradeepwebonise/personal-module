@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vacoe.personal.models.Student;
+import com.vacoe.personal.service.StudentService;
 import com.vacoe.personal.service.impl.StudentServiceImpl;
 
 /**
@@ -27,13 +28,13 @@ public class StudentController {
     private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
 
     @Autowired
-    private StudentServiceImpl studentService;
+    private StudentService studentService;
 
     @RequestMapping(value = "/rollNumber/{rollNumber}", method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody
     Student categoryList(@PathVariable Long rollNumber) throws JsonGenerationException, JsonMappingException, IOException {
         Student student = studentService.findStudent(rollNumber);
         System.out.println(new ObjectMapper().writeValueAsString(student));
-        return student;
+        return student; 
     }
 }
