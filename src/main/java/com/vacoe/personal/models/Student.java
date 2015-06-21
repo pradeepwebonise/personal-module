@@ -36,7 +36,7 @@ public class Student implements Serializable {
     private String address;
 
     @Column(name = "age")
-    private String age;
+    private Long age;
 
     @Column(name = "gender")
     private String gender;
@@ -77,11 +77,11 @@ public class Student implements Serializable {
         this.address = address;
     }
 
-    public String getAge() {
+    public Long getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(Long age) {
         this.age = age;
     }
 
