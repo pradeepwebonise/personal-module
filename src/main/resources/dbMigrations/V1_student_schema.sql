@@ -1,9 +1,8 @@
-create table student ( 
-   roll_number INT NOT NULL AUTO_INCREMENT,
-   first_name  VARCHAR(100),
-   last_name  VARCHAR(40) ,
-   address VARCHAR(40) ,
-   age  INT,
+create table user ( 
+   user_id INT NOT NULL AUTO_INCREMENT,
+   full_name  VARCHAR(200),
+   email VARCHAR(100) ,
+   contact   INT,
    gender  VARCHAR(40),
    PRIMARY KEY ( roll_number )
 );
